@@ -6,7 +6,7 @@
     <title>Socket Server</title>
 </head>
 <body>
-   <h1>Aplicacion Web Band Names</h1> 
+   <h1>Aplicacion Web Chat</h1> 
 
    <script src="socket.io/socket.io.js"></script>
 
@@ -19,21 +19,6 @@
 
        socket.on('disconnect', function(){
            console.log('Perdimos conexión al servidor');
-       });
-
-       socket.emit('mensaje',{nombre: 'Fernando'});
-
-       socket.on('mensaje', function(payload){
-           console.log('Escuchando: ', payload);
-       });
-
-       socket.on('nuevo-mensaje', function(payload){
-           console.log('Escuchando: ', payload);
-       });
-
-       socket.on('active-bands', function(bands){
-           console.clear();
-           console.table(bands);
        });
 
    </script>
